@@ -4,41 +4,119 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link href="portfolio/main.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="portfolio/main.css" />
     <link rel="stylesheet" href="home.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
   </head>
-  <body>
+  <body class="bg-gray-900">
     <header>
-      <nav class="flex flex-col-reverse text-white">
-        <a href="home.html">
-        <img src="" alt="brandImg"></a>
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact Me</a>
+      <nav class="nav-container flex justify-between items-center px-24 py-14 text-white">
+        <div>
+          <a href="home.html">
+            <h5 class="text-xl font-bold">LiT</h5>
+          </a>
+        </div>
+        <div class="nav-links hidden md:flex space-x-8 text-lg font-medium">
+          <div class="nav-links">
+            <a href="home.html" class="nav-item">Home</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="portfolio.html" class="nav-item">Portfolio</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+          </div>
+        </div>
+
+        <div class="social-icons flex space-x-4">
+          <a href="home.html">
+            <i
+              class="fa-brands fa-linkedin fa-beat-fade social-icon text-2xl"
+            ></i>
+          </a>
+          <a href="home.html">
+            <i
+              class="fa-brands fa-square-github fa-beat-fade social-icon text-2xl"
+            ></i>
+          </a>
+          <a href="home.html">
+            <i
+              class="fa-brands fa-square-instagram fa-beat-fade social-icon text-2xl"
+            ></i>
+          </a>
+        </div>
+
+        <!-- Mobile menu toggle -->
+        <div class="md:hidden flex items-center">
+          <button id="menu-toggle" class="text-white">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
       </nav>
+
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-cols bg-gray-800 text-white space-y-4 py-4"
+      >
+        <a href="home.html" class="hover:text-orange-300 px-10">Home</a>
+        <a href="about.html" class="hover:text-orange-300">About</a>
+        <a href="portfolio.html" class="hover:text-orange-300 px-10">
+          Portfolio
+        </a>
+        <a href="contact.html" class="hover:text-orange-300">Contact</a>
+      </div>
     </header>
 
     <main>
-      <section class="flex flex-col-reverse text-white">
-        <main class="p-6 text-white">
-            <h1 class="text-4xl font-bold">Welcome to My Website</h1>
-            <p class="mt-4 text-lg">This is the home page content.</p>
-        </main>
+      <section
+        class="flex flex-col m-24 mx-48 justify-between md:flex-row items-center text-white space-y-6 md:space-y-0 md:space-x-8"
+      >
+        <!-- Name and image -->
+        <div class="flex flex-col items-center md:items-start">
+          <div class="typed-out-container">
+            <div
+              id="typed-out"
+              class="typed-out text-[#FDBA74] text-xl font-medium text-white"
+            ></div>
+          </div>
 
+          <h2 class="text-5xl font-bold ">
+            ELIZABETH
+            <span class="text-[#FDBA74] surname">DOWUONA</span>
+          </h2>
+          <div class="flex gap-4">
+            <button
+            class="button relative mx-24 my-10 h-[50px] h-12 w-40 overflow-hidden border  bg-white shadow-2xl ">
+            <span class="relative z-10">Get Connected</span>
+          </button>
+          
+          </div>
+        </div>
+
+        <!-- Image with tilt effect using Tailwind CSS -->
+        <div
+          class="w-80 h-80 md:w-80 md:h-80 relative overflow-hidden rounded-full transform transition-all duration-500 ease-in-out hover:scale-110 hover:rotate-[10deg] hover:translate-x-2 hover:translate-y-2"
+        >
+          <img
+            src="assets/images/self.png"
+            alt="Elizabeth's picture"
+            class="w-full h-full object-cover rounded-full transition-all duration-500 ease-in-out"
+          />
+        </div>
       </section>
     </main>
+
     <script src="home.js"></script>
   </body>
 </html>
