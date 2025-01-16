@@ -6,6 +6,21 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log('Menu toggled');
     });
   });
+
+  const menuToggle = document.getElementById("menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+
+menuToggle.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
+const navLinks = document.querySelectorAll(".nav-links a");
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden"); // Close menu after click
+  });
+});
+
   const phrases = [
     "A Passionate Frontend Web Developer.",
     "Turning designs into functional, beautiful, and efficient websites."

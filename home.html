@@ -3,28 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Home</title>
+
+    <!-- External CSS Links -->
     <link rel="stylesheet" href="portfolio/main.css" />
     <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="contact.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body class="bg-gray-900">
     <header>
-      <nav class="nav-container flex justify-between items-center px-24 py-14 text-white">
+      <nav
+        class="nav-container flex justify-between items-center px-24 py-14 text-white"
+      >
         <div>
           <a href="home.html">
             <h5 class="text-xl font-bold">LiT</h5>
@@ -32,13 +36,14 @@
         </div>
         <div class="nav-links hidden md:flex space-x-8 text-lg font-medium">
           <div class="nav-links">
-            <a href="home.html" class="nav-item">Home</a>
-            <a href="about.html" class="nav-item">About</a>
-            <a href="portfolio.html" class="nav-item">Portfolio</a>
-            <a href="contact.html" class="nav-item">Contact</a>
+            <a href="#home" class="nav-item">Home</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#portfolio" class="nav-item">Portfolio</a>
+            <a href="#contact" class="nav-item">Contact</a>
           </div>
         </div>
 
+        <!-- Social Icons -->
         <div class="social-icons flex space-x-4">
           <a href="home.html">
             <i
@@ -57,7 +62,7 @@
           </a>
         </div>
 
-        <!-- Mobile menu toggle -->
+        <!-- Mobile Menu Toggle -->
         <div class="md:hidden flex items-center">
           <button id="menu-toggle" class="text-white">
             <i class="fa fa-bars"></i>
@@ -65,54 +70,266 @@
         </div>
       </nav>
 
+      <!-- Mobile Menu -->
       <div
         id="mobile-menu"
-        class="md:hidden hidden flex-cols bg-gray-800 text-white space-y-4 py-4"
+        class="md:hidden hidden flex-col bg-gray-800 text-white space-y-4 py-4"
       >
-        <a href="home.html" class="hover:text-orange-300 px-10">Home</a>
-        <a href="about.html" class="hover:text-orange-300">About</a>
-        <a href="portfolio.html" class="hover:text-orange-300 px-10">
-          Portfolio
-        </a>
-        <a href="contact.html" class="hover:text-orange-300">Contact</a>
+        <a href="#home" class="nav-item">Home</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#portfolio" class="nav-item">Portfolio</a>
+        <a href="#contact" class="nav-item">Contact</a>
       </div>
     </header>
 
     <main>
-      <section
-        class="flex flex-col m-24 mx-48 justify-between md:flex-row items-center text-white space-y-6 md:space-y-0 md:space-x-8"
-      >
-        <!-- Name and image -->
-        <div class="flex flex-col items-center md:items-start">
-          <div class="typed-out-container">
-            <div
-              id="typed-out"
-              class="typed-out text-[#FDBA74] text-xl font-medium text-white"
-            ></div>
+      <!-- Home Section -->
+      <section id="home" class="flex flex-col m-24 mx-48 space-y-12">
+        <!-- Name and Image in a Row -->
+        <div
+          class="flex flex-row justify-between mb-32 items-center text-white"
+        >
+          <!-- Name and Details -->
+          <div>
+            <div class="typed-out-container">
+              <div
+                id="typed-out"
+                class="typed-out text-[#FDBA74] text-xl font-medium text-white"
+              ></div>
+            </div>
+
+            <h2 class="text-5xl font-bold">
+              ELIZABETH
+              <span class="text-[#FDBA74] surname">DOWUONA</span>
+            </h2>
+            <div class="flex gap-4 mt-6">
+              <button
+                class="button relative h-12 w-40 overflow-hidden border bg-white shadow-2xl"
+              >
+                <span class="relative z-10">Get Connected</span>
+              </button>
+            </div>
           </div>
 
-          <h2 class="text-5xl font-bold ">
-            ELIZABETH
-            <span class="text-[#FDBA74] surname">DOWUONA</span>
-          </h2>
-          <div class="flex gap-4">
-            <button
-            class="button relative mx-24 my-10 h-[50px] h-12 w-40 overflow-hidden border  bg-white shadow-2xl ">
-            <span class="relative z-10">Get Connected</span>
-          </button>
-          
+          <!-- Image with Tilt Effect -->
+          <div
+            class="w-80 h-80 relative overflow-hidden rounded-full transform transition-all duration-500 ease-in-out hover:scale-110 hover:rotate-[10deg] hover:translate-x-2 hover:translate-y-2"
+          >
+            <img
+              src="assets/images/self.png"
+              alt="Elizabeth's picture"
+              class="w-full h-full object-cover rounded-full transition-all duration-500 ease-in-out"
+            />
           </div>
         </div>
 
-        <!-- Image with tilt effect using Tailwind CSS -->
-        <div
-          class="w-80 h-80 md:w-80 md:h-80 relative overflow-hidden rounded-full transform transition-all duration-500 ease-in-out hover:scale-110 hover:rotate-[10deg] hover:translate-x-2 hover:translate-y-2"
-        >
-          <img
-            src="assets/images/self.png"
-            alt="Elizabeth's picture"
-            class="w-full h-full object-cover rounded-full transition-all duration-500 ease-in-out"
-          />
+        <!-- Cards Container -->
+        <div class="flex mb-10 md:flex-row items-center justify-center gap-14">
+          <!-- Skills Card -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div
+                class="flip-card-front bg-gradient-to-r from-blue-500 to-purple-500 text-white p-14 rounded-lg shadow-lg"
+              >
+                <h2 class="text-3xl font-bold py-14 text-center">Skills</h2>
+                <div class="flex justify-center items-center">
+                  <i
+                    class="fa-solid fa-cog fa-spin fa-spin-reverse text-6xl"
+                  ></i>
+                </div>
+              </div>
+
+              <div
+                class="flip-card-back bg-gray-900 text-white p-6 rounded-lg shadow-lg"
+              >
+                <h2 class="text-xl font-bold mb-4">My Skills</h2>
+                <ol class="fa-ul">
+                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>React.js & Node.js</li>
+                  <br>
+                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>HTML5, CSS3, Tailwind CSSs</li>
+                  <br>
+                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>JavaScript/TypeScript</li>
+                  <br>
+                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Responsive Designs</li>
+                  <br>
+                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Python Programing Language (Basics)</li>
+                  <br>
+                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Cybersecurity</li>
+                  <br>
+                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Git & GitHub</li>
+
+                
+                  
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Creative Work Card -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div
+                class="flip-card-front bg-gradient-to-r from-pink-500 to-red-500 text-white p-6 rounded-lg shadow-lg"
+              >
+                <h2 class="text-3xl font-bold py-14 text-center">Creative Work</h2>
+                  <img class="flex justify-center items-center" src="assets/icons/creativework.gif" alt="">
+                
+                
+              </div>
+              <div
+                class="flip-card-back bg-gray-900 text-white p-6 rounded-lg shadow-lg"
+              >
+                <h2 class="text-xl font-bold mb-10">My Projects</h2>
+                <p>
+                  <strong>NGO Platform:</strong>
+                  A platform connecting NGOs and schools to address
+                  <br />
+                  aid requests and foster collaboration.
+                  <br />
+                  <br />
+                  <strong>Open Source Project:</strong>
+                  Ghana Hazard Reporter: Contributor to an open-source
+                  <br />
+                  project utilizing TypeScript to build login forms.
+                  <br />
+                  <br />
+                  <strong>Landing Pages:</strong>
+                  Built modern, responsive pages for startups.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dedication Card -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div
+                class="flip-card-front bg-gradient-to-r from-green-500 to-teal-500 text-white p-6 rounded-lg shadow-lg"
+              >
+                <h2 class="text-3xl font-bold py-14 text-center">Strong Dedication</h2>
+             <img class="flex justify-center " src="assets/icons/dedication.gif" alt="">
+              </div>
+              <div
+                class="flip-card-back bg-gray-900 text-white p-6 rounded-lg shadow-lg"
+              >
+                <h2 class="text-xl font-bold mb-4">My Commitment</h2>
+                <p>
+                  <strong>Learning:</strong>
+                  Engaged in multiple learning programs, bootcamps, and training
+                  to continuously refine technical expertise.
+                  <br />
+                  <br />
+                  <strong>Volunteer:</strong>
+                  Dedicated to community impact through
+                  <br />
+                  volunteer efforts and projects aimed at solving societal
+                  issues.
+                  <br />
+                  <br />
+                  <strong>Passion:</strong>
+                  Solving real-world problems with creative solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION  -->
+      <section
+        id="about"
+        class="flex flex-col text-white mt-24 items-center py-14"
+      >
+        <h3 class="text-2xl py-4 font-bold">ABOUT ME</h3>
+        <h2 class="text-5xl font-medium text-center">
+          A Passionate Developer
+          <br />
+          Who Loves to Code
+        </h2>
+
+        <div class="flex flex-row mx-32 my-24">
+          <div class="px-24">
+            <img src="assets\images\logo.png" alt="image of me " />
+            <img src="assets\images\logo.png" alt="image of book" />
+          </div>
+
+          <div class="text-center">
+            <h3 class="text-2xl py-4 font-bold">ABOUT ME</h3>
+            <p class="text-white text-2xl text-left">
+              With a background in Computer Science and a passion for
+              <br />
+              crafting engaging user experiences, I specialize in React.js,
+              Tailwind CSS,
+              <br />
+              and modern web development. My journey started with a simple love
+              for technology,
+              <br />
+              and now I create solutions that make a difference. When I’m not
+              coding, I enjoy mentoring others and exploring AI and
+              cybersecurity.
+            </p>
+
+            <div class="flex gap-4 items-center p-24">
+              <button
+                class="button relative mx-24 my-10 h-[50px] h-12 w-40 overflow-hidden border bg-white shadow-2xl"
+              >
+                <span class="relative z-10">DOWNLOAD CV</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="section-container"></div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section
+        id="contact"
+        class="flex flex-col m-24 mx-48 justify-between md:flex-row items-center text-white space-y-6 md:space-y-0 md:space-x-8"
+      >
+        <div class="container">
+          <div class="content">
+            <div class="left-side">
+              <div class="address details">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="topic">Address</div>
+                <div class="text-one">New Achimota</div>
+                <div class="text-two">Asene St</div>
+                <div class="text-two">Accra</div>
+              </div>
+              <div class="phone details">
+                <i class="fas fa-phone-alt"></i>
+                <div class="topic">Phone</div>
+                <div class="text-one">+233 554 825 221</div>
+                <div class="text-two">+233 204 551 326</div>
+              </div>
+              <div class="email details">
+                <i class="fas fa-envelope"></i>
+                <div class="topic">Email</div>
+                <div class="text-one">elizabethbarden18@gmail.com</div>
+              </div>
+            </div>
+            <div class="right-side">
+              <div class="topic-text">Send me a message</div>
+              <p>
+                If you have any projects, collaborations, or inquiries about my
+                work, feel free to reach out. I’m always excited to connect and
+                explore new opportunities.
+              </p>
+              <form action="#">
+                <div class="input-box">
+                  <input type="text" placeholder="Enter your name" />
+                </div>
+                <div class="input-box">
+                  <input type="text" placeholder="Enter your email" />
+                </div>
+                <div class="input-box message-box"></div>
+                <div class="button">
+                  <input type="button" value="Send Now" />
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </main>
