@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="portfolio/main.css" />
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="about.css" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
@@ -27,24 +29,34 @@
   <body class="bg-gray-900">
     <header>
       <nav
-        class="nav-container flex justify-between items-center px-24 py-14 text-white"
+        class="nav-container flex justify-between items-center px-14 py-14 text-white"
       >
+        <!-- Logo -->
         <div>
           <a href="home.html">
             <h5 class="text-xl font-bold">LiT</h5>
           </a>
         </div>
-        <div class="nav-links hidden md:flex space-x-8 text-lg font-medium">
-          <div class="nav-links">
-            <a href="#home" class="nav-item">Home</a>
-            <a href="#about" class="nav-item">About</a>
-            <a href="#portfolio" class="nav-item">Portfolio</a>
-            <a href="#contact" class="nav-item">Contact</a>
-          </div>
+
+        <!-- Nav Links (hidden on mobile, shown on larger screens) -->
+        <div
+          class="nav-links sm:flex-row md:flex space-x-5 text-lg font-medium hidden md:flex"
+        >
+          <a href="#home" class="nav-item">Home</a>
+          <a href="#about" class="nav-item">About</a>
+          <a href="#portfolio" class="nav-item">Portfolio</a>
+          <a href="#contact" class="nav-item">Contact</a>
         </div>
 
-        <!-- Social Icons -->
-        <div class="social-icons flex space-x-4">
+        <!-- Hamburger (visible on mobile) -->
+        <div class="hamburger md:hidden">
+          <button id="hamburger-btn" class="text-white">
+            <i class="fa fa-bars text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Social Icons (hidden on mobile) -->
+        <div class="social-icons sm:flex-row md:flex-row">
           <a href="home.html">
             <i
               class="fa-brands fa-linkedin fa-beat-fade social-icon text-2xl"
@@ -61,19 +73,12 @@
             ></i>
           </a>
         </div>
-
-        <!-- Mobile Menu Toggle -->
-        <div class="md:hidden flex items-center">
-          <button id="menu-toggle" class="text-white">
-            <i class="fa fa-bars"></i>
-          </button>
-        </div>
       </nav>
 
-      <!-- Mobile Menu -->
+      <!-- Mobile Menu (hidden by default) -->
       <div
         id="mobile-menu"
-        class="md:hidden hidden flex-col bg-gray-800 text-white space-y-4 py-4"
+        class="mobile-menu text-2xl idden md:hidden flex flex-col items-center"
       >
         <a href="#home" class="nav-item">Home</a>
         <a href="#about" class="nav-item">About</a>
@@ -84,23 +89,22 @@
 
     <main>
       <!-- Home Section -->
-      <section id="home" class="flex flex-col m-24 mx-48 space-y-12">
+      <section id="home" class="flex flex-col m-12 sm:m-24 lg:mx-10 space-y-12">
         <!-- Name and Image in a Row -->
         <div
-          class="flex flex-row justify-between mb-32 items-center text-white"
+          class="flex flex-col sm:flex-row justify-between mb-32 items-center text-white"
         >
           <!-- Name and Details -->
           <div>
             <div class="typed-out-container">
               <div
                 id="typed-out"
-                class="typed-out text-[#FDBA74] text-xl font-medium text-white"
+                class="typed-out skills text-xl font-medium text-white"
               ></div>
             </div>
-
-            <h2 class="text-5xl font-bold">
+            <h2 class="text-4xl sm:text-5xl font-bold">
               ELIZABETH
-              <span class="text-[#FDBA74] surname">DOWUONA</span>
+              <span class=" skills">DOWUONA</span>
             </h2>
             <div class="flex gap-4 mt-6">
               <button
@@ -113,7 +117,7 @@
 
           <!-- Image with Tilt Effect -->
           <div
-            class="w-80 h-80 relative overflow-hidden rounded-full transform transition-all duration-500 ease-in-out hover:scale-110 hover:rotate-[10deg] hover:translate-x-2 hover:translate-y-2"
+            class="w-40 h-40 sm:w-80 sm:h-80 relative overflow-hidden rounded-full transform transition-all duration-500 ease-in-out hover:scale-110 hover:rotate-[10deg] hover:translate-x-2 hover:translate-y-2"
           >
             <img
               src="assets/images/self.png"
@@ -124,73 +128,84 @@
         </div>
 
         <!-- Cards Container -->
-        <div class="flex mb-10 md:flex-row items-center justify-center gap-14">
+        <div class="flex flex-wrap justify-center gap-10 sm:gap-14 items-center mb-10">
           <!-- Skills Card -->
-          <div class="flip-card">
+          <div class="flip-card w-[300px] sm:w-[400px]">
             <div class="flip-card-inner">
-              <div
-                class="flip-card-front bg-gradient-to-r from-blue-500 to-purple-500 text-white p-14 rounded-lg shadow-lg"
-              >
-                <h2 class="text-3xl font-bold py-14 text-center">Skills</h2>
-                <div class="flex justify-center items-center">
-                  <i
-                    class="fa-solid fa-cog fa-spin fa-spin-reverse text-6xl"
-                  ></i>
+              <div class="flip-card-front bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold py-10 text-center">Skills</h2>
+                <div class="flex justify-center h-32 w-32 items-center">
+                  <i class="fa-solid fa-cog fa-spin fa-spin-reverse text-6xl"></i>
                 </div>
               </div>
-
-              <div
-                class="flip-card-back bg-gray-900 text-white p-6 rounded-lg shadow-lg"
-              >
+              <div class="flip-card-back bg-gray-900 text-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-xl font-bold mb-4">My Skills</h2>
                 <ol class="fa-ul">
-                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>React.js & Node.js</li>
-                  <br>
-                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>HTML5, CSS3, Tailwind CSSs</li>
-                  <br>
-                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>JavaScript/TypeScript</li>
-                  <br>
-                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Responsive Designs</li>
-                  <br>
-                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Python Programing Language (Basics)</li>
-                  <br>
-                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Cybersecurity</li>
-                  <br>
-                  <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Git & GitHub</li>
-
-                
-                  
+                  <li>
+                    <span class="fa-li">
+                      <i class="fa-solid fa-check-square"></i>
+                    </span>
+                    React.js & Node.js
+                  </li>
+                  <li>
+                    <span class="fa-li">
+                      <i class="fa-solid fa-check-square"></i>
+                    </span>
+                    HTML5, CSS3, Tailwind CSS
+                  </li>
+                  <li>
+                    <span class="fa-li">
+                      <i class="fa-solid fa-check-square"></i>
+                    </span>
+                    JavaScript/TypeScript
+                  </li>
+                  <li>
+                    <span class="fa-li">
+                      <i class="fa-solid fa-check-square"></i>
+                    </span>
+                    Responsive Designs
+                  </li>
+                  <li>
+                    <span class="fa-li">
+                      <i class="fa-solid fa-check-square"></i>
+                    </span>
+                    Python Programming Language (Basics)
+                  </li>
+                  <li>
+                    <span class="fa-li">
+                      <i class="fa-solid fa-check-square"></i>
+                    </span>
+                    Cybersecurity
+                  </li>
+                  <li>
+                    <span class="fa-li">
+                      <i class="fa-solid fa-check-square"></i>
+                    </span>
+                    Git & GitHub
+                  </li>
                 </ol>
               </div>
             </div>
           </div>
-
+        
           <!-- Creative Work Card -->
-          <div class="flip-card">
+          <div class="flip-card w-[300px] sm:w-[400px]">
             <div class="flip-card-inner">
-              <div
-                class="flip-card-front bg-gradient-to-r from-pink-500 to-red-500 text-white p-6 rounded-lg shadow-lg"
-              >
-                <h2 class="text-3xl font-bold py-14 text-center">Creative Work</h2>
-                  <img class="flex justify-center items-center" src="assets/icons/creativework.gif" alt="">
-                
-                
+              <div class="flip-card-front bg-gradient-to-r from-pink-500 to-red-500 text-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold py-10 text-center">Creative Work</h2>
+                <img class="h-32 w-32 mx-auto" src="assets/icons/creativework.gif" alt="Creative Work">
               </div>
-              <div
-                class="flip-card-back bg-gray-900 text-white p-6 rounded-lg shadow-lg"
-              >
+              <div class="flip-card-back bg-gray-900 text-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-xl font-bold mb-10">My Projects</h2>
                 <p>
                   <strong>NGO Platform:</strong>
-                  A platform connecting NGOs and schools to address
-                  <br />
-                  aid requests and foster collaboration.
+                  A platform connecting NGOs and schools to address aid requests
+                  and foster collaboration.
                   <br />
                   <br />
                   <strong>Open Source Project:</strong>
-                  Ghana Hazard Reporter: Contributor to an open-source
-                  <br />
-                  project utilizing TypeScript to build login forms.
+                  Ghana Hazard Reporter: Contributor to an open-source project
+                  utilizing TypeScript to build login forms.
                   <br />
                   <br />
                   <strong>Landing Pages:</strong>
@@ -199,19 +214,15 @@
               </div>
             </div>
           </div>
-
+        
           <!-- Dedication Card -->
-          <div class="flip-card">
+          <div class="flip-card w-[300px] sm:w-[400px]">
             <div class="flip-card-inner">
-              <div
-                class="flip-card-front bg-gradient-to-r from-green-500 to-teal-500 text-white p-6 rounded-lg shadow-lg"
-              >
-                <h2 class="text-3xl font-bold py-14 text-center">Strong Dedication</h2>
-             <img class="flex justify-center " src="assets/icons/dedication.gif" alt="">
+              <div class="flip-card-front bg-gradient-to-r from-green-500 to-teal-500 text-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold py-10 text-center">Strong Dedication</h2>
+                <img class="h-32 w-32 mx-auto" src="assets/icons/dedication.gif" alt="Dedication">
               </div>
-              <div
-                class="flip-card-back bg-gray-900 text-white p-6 rounded-lg shadow-lg"
-              >
+              <div class="flip-card-back bg-gray-900 text-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-xl font-bold mb-4">My Commitment</h2>
                 <p>
                   <strong>Learning:</strong>
@@ -220,10 +231,8 @@
                   <br />
                   <br />
                   <strong>Volunteer:</strong>
-                  Dedicated to community impact through
-                  <br />
-                  volunteer efforts and projects aimed at solving societal
-                  issues.
+                  Dedicated to community impact through volunteer efforts and
+                  projects aimed at solving societal issues.
                   <br />
                   <br />
                   <strong>Passion:</strong>
@@ -233,54 +242,80 @@
             </div>
           </div>
         </div>
+        
       </section>
 
       <!-- ABOUT SECTION  -->
       <section
-        id="about"
-        class="flex flex-col text-white mt-24 items-center py-14"
-      >
-        <h3 class="text-2xl py-4 font-bold">ABOUT ME</h3>
+      id="about"
+      class="flex flex-col text-white mt-32 items-center  py-14"
+    >
+      <header>
         <h2 class="text-5xl font-medium text-center">
-          A Passionate Developer
-          <br />
+          A Passionate Developer<br />
           Who Loves to Code
         </h2>
-
-        <div class="flex flex-row mx-32 my-24">
-          <div class="px-24">
-            <img src="assets\images\logo.png" alt="image of me " />
-            <img src="assets\images\logo.png" alt="image of book" />
-          </div>
-
-          <div class="text-center">
-            <h3 class="text-2xl py-4 font-bold">ABOUT ME</h3>
-            <p class="text-white text-2xl text-left">
-              With a background in Computer Science and a passion for
-              <br />
-              crafting engaging user experiences, I specialize in React.js,
-              Tailwind CSS,
-              <br />
-              and modern web development. My journey started with a simple love
-              for technology,
-              <br />
-              and now I create solutions that make a difference. When I’m not
-              coding, I enjoy mentoring others and exploring AI and
-              cybersecurity.
-            </p>
-
-            <div class="flex gap-4 items-center p-24">
-              <button
-                class="button relative mx-24 my-10 h-[50px] h-12 w-40 overflow-hidden border bg-white shadow-2xl"
-              >
-                <span class="relative z-10">DOWNLOAD CV</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="section-container"></div>
+      </header>
+    
+      <div class="flex flex-wrap justify-center items-center mx-8 my-16 gap-8">
+        <div class="w-full lg:w-1/3 flex justify-center">
+          <img
+            class="object-cover rounded-lg shadow-lg"
+            src="assets/images/logo.png"
+            alt="Developer profile picture"
+          />
         </div>
-      </section>
+        <div class=" mb-32 w-full lg:w-1/2 text-center lg:text-left">
+          <h3 class="skills text-2xl py-4 font-bold">ABOUT ME</h3>
+          <p class="text-white text-lg leading-relaxed">
+            With a background in Computer Science and a passion for crafting
+            engaging user experiences, I specialize in React.js, Tailwind CSS, and
+            modern web development. My journey started with a simple love for
+            technology, and now I create solutions that make a difference. When I’m
+            not coding, I enjoy mentoring others and exploring AI and cybersecurity.
+          </p>
+          <div class="flex gap-4 mt-6  justify-center lg:justify-start mt-8">
+            
+                        <button
+              class="button relative h-12 w-40 overflow-hidden border bg-white shadow-2xl"
+            >
+              <span class="relative z-10">DOWNLOAD CV</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="flex flex-wrap mt-32  justify-center gap-6">
+        <a href="#" class="card">
+          <h5 class="mb-2">GITHUB CONTRIBUTIONS</h5>
+          <p>212 Contribution since 2024</p>
+        </a>
+        <a href="#" class="card">
+          <h5 class="mb-2">PROJECTS</h5>
+          <p>20 Project(REPOS)</p>
+        </a>
+        <a href="#" class="card">
+          <h5 class="mb-2">DIRECT CLIENT</h5>
+          <p>FOUR 4</p>
+        </a>
+        <a href="#" class="card">
+          <h5 class="mb-2">AWARDS & CERTIFICATES</h5>
+          <p>FIVE 5</p>
+        </a>
+      </div>
+<!-- SKILLS SECTION -->
+      <header class="mt-48 text-center">
+        <h6 class="skills text-3xl  font-medium ">Skills</h6>
+        <h3 class="text-4xl">Consistent Hardwork to <br> Improve My Skills </h3>
+      </header>
+
+<!-- RESUME SECTION -->
+      <header class="mt-48 text-center">
+        <h6 class="skills text-3xl  font-medium ">Resume</h6>
+        <h3 class="text-4xl">Experience  <br>  & Education </h3>
+      </header>
+    </section>
+    
 
       <!-- Contact Section -->
       <section

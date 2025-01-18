@@ -1,25 +1,11 @@
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOM fully loaded'); // Check if script is running
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-      const mobileMenu = document.getElementById('mobile-menu');
-      mobileMenu.classList.toggle('hidden');
-      console.log('Menu toggled');
-    });
-  });
+document.getElementById('hamburger-btn').addEventListener('click', function () {
+  const mobileMenu = document.getElementById('mobile-menu');
 
-  const menuToggle = document.getElementById("menu-toggle");
-const mobileMenu = document.getElementById("mobile-menu");
-
-menuToggle.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
+  // Toggle visibility of nav links for mobile
+  mobileMenu.classList.toggle('hidden');
 });
 
-const navLinks = document.querySelectorAll(".nav-links a");
-navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.add("hidden"); // Close menu after click
-  });
-});
+
 
   const phrases = [
     "A Passionate Frontend Web Developer.",
