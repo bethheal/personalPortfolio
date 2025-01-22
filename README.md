@@ -29,7 +29,13 @@ Font Awesome  (for social media and other UI elements)
 Git & GitHub (for version control)
 
 
-# Portfolio of Elizabeth
+
+## 🌐 Live Demo
+
+You can view the live version of the portfolio [here](https://bethheal.github.io/personalPortfolio/).
+
+
+
 
 This repository contains the source code and details of my professional portfolio as a frontend developer specializing in React.js, HTML, CSS, and Tailwind CSS.
 
@@ -46,7 +52,6 @@ git clone https://github.com/bethheal/portfolio.git
 cd portfolio
 npm install
 npm start
-
 
 
 
