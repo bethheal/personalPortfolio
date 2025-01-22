@@ -109,3 +109,19 @@ progress::-moz-progress-bar {
 }
 
 
+
+
+
+/* Main Image */
+.image {
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for main image */
+.image:hover {
+  transform: rotate(3deg) scale(1.05); /* Slight tilt and zoom effect */
+}

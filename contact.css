@@ -78,11 +78,69 @@ p {
   }
 
   .right-side .topic-text {
-    text-align: center; /* Center "Send me a message" on mobile */
+    text-align: center;
   }
 
   .right-side p {
-    text-align: center; /* Center paragraph under "Send me a message" on mobile */
+    text-align: center; 
+  }
+}
+
+.contact-form {
+  margin-top: 20px;
+}
+
+.input-box {
+  margin-bottom: 15px;
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #374151;
+  color: white;
+  font-size: 14px;
+}
+
+.input-box textarea {
+  resize: none;
+  height: 100px;
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+  color: #9CA3AF;
+}
+
+.button button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #FDBA74;
+  color: #1F2937;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button button:hover {
+  background-color: #1f2937;
+  color:white
+}
+
+@media (max-width: 820px) {
+  .input-box input,
+  .input-box textarea {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .button button {
+    font-size: 14px;
   }
 }
 
