@@ -50,8 +50,9 @@ Open a terminal and run the following command:
 ```bash
 git clone https://github.com/bethheal/portfolio.git
 cd portfolio
-npm install
-npm start
+open index.html  # on macOS
+start index.html  # on Windows
+
 
 
 
