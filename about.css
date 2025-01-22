@@ -39,44 +39,23 @@ font-family: "Poppins" , sans-serif;
 }
 /* PROGRESS BARS  */
 
-.progress-container,
-.resume-container {
-  display: grid;
-  grid-template-columns: 1fr; /* Mobile: 1 column */
-  gap: 1.5rem;
-  width: 100%; /* Ensure full width */
-  padding: 0; /* Remove unwanted padding */
-  margin: 0; /* Remove unwanted margin */
-  box-sizing: border-box; /* Include padding and borders in element width */
+.progress-container, .resume-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 20px; /* General padding for larger screens */
+  box-sizing: border-box; /* Ensure padding doesn't overflow the container */
 }
 
-/* Resume Section Header */
-header h6.skills {
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-header h3 {
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 1rem; /* Add top margin for spacing */
-}
-
-/* Buttons */
-button {
-  height: 3rem;
-  width: 100%; /* Ensure button takes full width */
-  max-width: 10rem; /* Limit width to a max value */
-  border: 1px solid #fff;
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem 1rem;
-  text-align: center;
-  font-weight: 500;
-  margin: 0 auto; /* Center the button */
-  display: block;
-}
-
+.progress-container , .resume-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* max-width: 800px; */
+  width: 100%;
+  padding-left:200px;
+} 
 .column, .row {
   flex: 1 1 45%; 
   flex-direction: column;
@@ -117,64 +96,16 @@ progress::-moz-progress-bar {
 }
 
 @media (max-width: 600px) {
-  .progress-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+  .progress-container, .resume-container {
+    padding :0;
+    padding-left: 5rem;
+    
   }
 
-  .column {
-      flex: 1 1 100%; /* Full width for smaller screens */
-  }
-
-  .skill {
-      align-items: center;
-  }
-
-  label {
-      text-align: center;
-  }
+ 
 }
 .icons{
   background: #FDBA74;
 }
 
-/* For Medium Screens (Tablets) - Start from 768px */
-@media (min-width: 768px) {
-  .progress-container {
-    grid-template-columns: repeat(2, 1fr); /* Tablet: 2 columns */
-  }
 
-  .resume-container {
-    grid-template-columns: 1fr 1fr; /* Tablet: 2 columns */
-  }
-
-  .row {
-    padding: 1rem;
-  }
-
-  button {
-    width: auto; /* Button takes its natural width */
-    max-width: 12rem; /* Button max width */
-  }
-}
-
-/* For Large Screens (Desktops) - Start from 1024px */
-@media (min-width: 1024px) {
-  .progress-container {
-    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns */
-  }
-
-  .resume-container {
-    grid-template-columns: 1fr 1fr; /* Desktop: 2 columns */
-  }
-
-  .row {
-    padding: 2rem;
-  }
-
-  button {
-    width: auto; /* Button takes its natural width */
-    max-width: 15rem; /* Button max width */
-  }
-}

@@ -6,6 +6,24 @@ document.getElementById('hamburger-btn').addEventListener('click', function () {
 });
 
 
+  function showLoader() {
+    document.getElementById("loader-container").style.display = "flex";
+  }
+
+  function hideLoader() {
+    document.getElementById("loader-container").style.display = "none";
+  }
+
+  function fetchData() {
+    showLoader(); // Show loader
+    setTimeout(() => {
+      hideLoader(); // Hide loader after 3 seconds (simulate fetch)
+    }, 3000);
+  }
+
+ 
+  // Automatically start fetch for demonstration
+  document.addEventListener("DOMContentLoaded", fetchData);
 
   const phrases = [
     "A Passionate Frontend Web Developer.",
@@ -47,39 +65,35 @@ document.getElementById('hamburger-btn').addEventListener('click', function () {
 
   // PROGRESS BOARD SCRIPT
   const skills = [
-    { id: 'react', value: 87 },
-    { id: 'html', value: 93 },
-    { id: 'css', value: 86 },
-    { id: 'javascript', value: 75 },
-    { id: 'python', value: 40 },
-    { id: 'typescript', value: 30 },
-];
+      { id: 'react', value: 87 },
+      { id: 'html', value: 93 },
+      { id: 'css', value: 86 },
+      { id: 'javascript', value: 75 },
+      { id: 'python', value: 40 },
+      { id: 'typescript', value: 30 },
+  ];
 
-let isScrolledTo = false;
+  let isScrolledTo = false;
 
-window.addEventListener('scroll', () => {
-    const container = document.querySelector('.progress-container');
-    if (!container) return; // Exit if container is not found
+  window.addEventListener('scroll', () => {
+      const container = document.querySelector('.progress-container');
+      const rect = container.getBoundingClientRect();
 
-    const rect = container.getBoundingClientRect();
+      if (!isScrolledTo && rect.top < window.innerHeight && rect.bottom >= 0) {
+          isScrolledTo = true;
 
-    if (!isScrolledTo && rect.top < window.innerHeight && rect.bottom >= 0) {
-        isScrolledTo = true;
+          skills.forEach(skill => {
+              const progressBar = document.getElementById(skill.id);
+              let value = 0;
 
-        skills.forEach(skill => {
-            const progressBar = document.getElementById(skill.id);
-            if (!progressBar) return; // Exit if progressBar is not found
-
-            let value = 0;
-
-            const interval = setInterval(() => {
-                if (value >= skill.value) {
-                    clearInterval(interval);
-                } else {
-                    value++;
-                    progressBar.value = value;
-                }
-            }, 20); // Speed of the progress animation
-        });
-    }
-});
+              const interval = setInterval(() => {
+                  if (value >= skill.value) {
+                      clearInterval(interval);
+                  } else {
+                      value++;
+                      progressBar.value = value;
+                  }
+              }, 20); // Speed of the progress animation
+          });
+      }
+  });

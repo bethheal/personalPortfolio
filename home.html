@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="contact.css" />
     <link rel="stylesheet" href="about.css" />
 
+    
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
@@ -27,6 +28,11 @@
   </head>
 
   <body class="bg-gray-900">
+<!-- LOADER SECTION -->
+    <div id="loader-container">
+      <span class="loader"></span>
+    </div>
+    
     <header>
       <nav
         class="nav-container flex justify-between items-center px-14 py-14 text-white"
@@ -89,14 +95,14 @@
 
     <main>
       <!-- Home Section -->
-      <section id="home" class="flex flex-col m-12 sm:m-24 lg:mx-10 space-y-12">
+      <section id="home" class="flex flex-col  m-24 sm:m-24 lg:mx-10 space-y-12">
         <!-- Name and Image in a Row -->
         <div
-          class="flex flex-col sm:flex-row justify-between mb-32 items-center text-white"
+          class="flex flex-col sm:flex-row justify-between p-24  mb-32 items-center text-white gap-14"
         >
           <!-- Name and Details -->
           <div>
-            <div class="typed-out-container">
+            <div class="typed-out-container px-24">
               <div
                 id="typed-out"
                 class="typed-out skills text-xl font-medium text-white"
@@ -106,13 +112,16 @@
               ELIZABETH
               <span class="skills">DOWUONA</span>
             </h2>
-            <div class="flex gap-4 mt-6">
-              <button
-                class="button relative h-12 w-40 overflow-hidden border bg-white shadow-2xl"
+          
+            <div class="flex justify-center gap-4 mt-6">
+              <a
+                href="#contact"
+                class="button relative flex items-center justify-center h-12 w-40 overflow-hidden border bg-white text-black font-semibold shadow-2xl transition-transform duration-300 ease-in-out hover:scale-105"
               >
-                <span class="relative z-10">Get Connected</span>
-              </button>
+                <span class="relative z-10">GET CONNECTED</span>
+              </a>
             </div>
+            
           </div>
 
           <!-- Image with Tilt Effect -->
@@ -305,37 +314,38 @@
               When I’m not coding, I enjoy mentoring others and exploring AI and
               cybersecurity.
             </p>
-            <div class="flex gap-4 mt-6 justify-center lg:justify-start mt-8">
-              <button
-                class="button relative h-12 w-40 overflow-hidden border bg-white shadow-2xl"
+            <div class="flex justify-center gap-4 mt-6">
+              <!-- Shared link to download CV -->
+              <a
+                href="https://docs.google.com/document/d/1bQXNZgsxr3Y-Gb39deJZ1HS4pIMXS36j/edit?usp=sharing&ouid=117874706650817948176&rtpof=true&sd=true"
+                class="button relative flex items-center justify-center h-12 w-40 overflow-hidden border bg-white text-black font-semibold shadow-2xl transition-transform duration-300 ease-in-out hover:scale-105"
               >
-                <span class="relative z-10">DOWNLOAD CV</span>
-              </button>
+                <span class="relative z-10">VIEW CV</span>
+              </a>
             </div>
+            
           </div>
         </div>
 
-        <div class="flex flex-wrap mt-32 justify-center gap-6">
-          <!-- Cards Section -->
-          <a href="#" class="card flex-1 sm:max-w-xs md:max-w-md lg:max-w-lg p-6 border rounded-lg shadow-lg">
-            <h5 class="mb-2 text-center">GITHUB CONTRIBUTIONS</h5>
-            <p class="text-center">212 Contributions since 2024</p>
+       <div class="flex flex-wrap mt-32 justify-center gap-6">
+          <a href="#" class="card">
+            <h5 class="mb-2">GITHUB CONTRIBUTIONS</h5>
+            <p>212 Contribution since 2024</p>
           </a>
-          <a href="#" class="card flex-1 sm:max-w-xs md:max-w-md lg:max-w-lg p-6 border rounded-lg shadow-lg">
-            <h5 class="mb-2 text-center">PROJECTS</h5>
-            <p class="text-center">20 Projects (REPOS)</p>
+          <a href="#" class="card">
+            <h5 class="mb-2">PROJECTS</h5>
+            <p>20 Project(REPOS)</p>
           </a>
-          <a href="#" class="card flex-1 sm:max-w-xs md:max-w-md lg:max-w-lg p-6 border rounded-lg shadow-lg">
-            <h5 class="mb-2 text-center">DIRECT CLIENT</h5>
-            <p class="text-center">FOUR 4</p>
+          <a href="#" class="card">
+            <h 5 class="mb-2">DIRECT CLIENT</h5>
+            <p>FOUR 4</p>
           </a>
-          <a href="#" class="card flex-1 sm:max-w-xs md:max-w-md lg:max-w-lg p-6 border rounded-lg shadow-lg">
-            <h5 class="mb-2 text-center">AWARDS & CERTIFICATES</h5>
-            <p class="text-center">FIVE 5</p>
+          <a href="#" class="card">
+            <h5 class="mb-2">AWARDS & CERTIFICATES</h5>
+            <p>FIVE 5</p>
           </a>
         </div>
-        
-        <!-- Skills Section -->
+        <!-- Skills Progress bar Section -->
         <header class="mt-48 text-center">
           <h6 class="skills text-3xl font-medium">Skills</h6>
           <h3 class="text-4xl">
@@ -344,156 +354,236 @@
             Improve My Skills
           </h3>
         </header>
-        
-        <div class="progress-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      
+
+        <div class="progress-container">
           <!-- Left Column -->
-          <div class="column">
-            <div class="skill py-6">
+          <div class="column pt-14 pr-24">
+            <div class="skill py-14">
               <label for="react">React - 87%</label>
-              <progress id="react" value="87" max="100" class="w-full"></progress>
+              <progress
+                id="react"
+                value="87"
+                max="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+              ></progress>
             </div>
-            <div class="skill py-6">
+            <div class="skill py-14">
               <label for="html">HTML - 93%</label>
-              <progress id="html" value="93" max="100" class="w-full"></progress>
+              <progress
+                id="html"
+                value="93"
+                max="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+              ></progress>
             </div>
-            <div class="skill py-6">
+            <div class="skill py-14">
               <label for="css">CSS - 86%</label>
-              <progress id="css" value="86" max="100" class="w-full"></progress>
+              <progress
+                id="css"
+                value="86"
+                max="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+              ></progress>
             </div>
           </div>
-        
+
           <!-- Right Column -->
-          <div class="column">
-            <div class="skill py-6">
+          <div class="column pt-14 pr-24">
+            <div class="skill py-14">
               <label for="javascript">JavaScript - 75%</label>
-              <progress id="javascript" value="75" max="100" class="w-full"></progress>
+              <progress
+                id="javascript"
+                value="0"
+                max="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+              ></progress>
             </div>
-            <div class="skill py-6">
+            <div class="skill py-14">
               <label for="python">Python - 40%</label>
-              <progress id="python" value="40" max="100" class="w-full"></progress>
+              <progress
+                id="python"
+                value="0"
+                max="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+              ></progress>
             </div>
-            <div class="skill py-6">
+            <div class="skill py-14">
               <label for="typescript">TypeScript - 30%</label>
-              <progress id="typescript" value="30" max="100" class="w-full"></progress>
+              <progress
+                id="typescript"
+                value="0"
+                max="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+              ></progress>
             </div>
           </div>
         </div>
-        
-        <!-- Resume Section -->
-        <header class="mt-16 sm:mt-24 text-center">
-          <h6 class="skills text-2xl sm:text-3xl font-medium">Resume</h6>
-          <h3 class="text-3xl sm:text-4xl">
+
+        <!-- RESUME SECTION -->
+        <header class="mt-48 text-center">
+          <h6 class="skills text-3xl font-medium">Resume</h6>
+          <h3 class="text-4xl">
             Experience
             <br />
             & Education
           </h3>
         </header>
+
+
         
-        <div class="resume-container grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- LEFT COLUMN -->
-          <div class="row">
-            <h2 class="font-bold text-2xl sm:text-3xl p-6">EXPERIENCE</h2>
-            <div class="icons relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden flex items-center justify-center">
-              <img class="flex-row" src="assets/icons/experienceIcon.png" alt="Experience Icon" />
+        <div class="resume-container">
+          <!-- LEFT COLUMN  -->
+          <div class="row pt-14 pr-24">
+            <h2  class="font-bold  text-3xl p-6">EXPERIENCE</h2>
+            <div
+              class="icons relative w-14 h-14 rounded-full overflow-hidden flex items-center justify-center"
+            >
+              <img
+                class="flex-row"
+                src="assets/icons/experienceIcon.png"
+                alt="Experience Icon"
+              />
             </div>
-        
-            <div class="skill px-6 py-4 sm:px-14 sm:py-6">
-              <h5>Junior Frontend Web Developer Apprenticeship (06/2024 – 08/2024)</h5>
-              <h6>MEST Africa Grow Program</h6>
+
+            <div class="skill px-14 py-4">
+              <h5 > Junior Frontend Web Developer Apprentiship  (06/2024 – 08/2024)</h5>
+              <h6>MEST Africa Grow Program </h6>
               <p>
-                Worked on projects using modern frontend technologies,
+                Worked on projects using modern frontend technologies, 
                 improving my skills in web development and collaboration in a fast-paced environment.
               </p>
             </div>
-            <div class="icons relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden flex items-center justify-center">
-              <img class="flex-row" src="assets/icons/experienceIcon.png" alt="Experience Icon" />
+            <div
+              class="icons relative w-14 h-14 rounded-full overflow-hidden flex items-center justify-center"
+            >
+              <img
+                class="flex-row"
+                src="assets/icons/experienceIcon.png"
+                alt="Experience Icon"
+              />
             </div>
-            <div class="skill px-6 py-4 sm:px-14 sm:py-6">
-              <h5>IT Support Specialist (09/2021 - 08/2023)</h5>
-              <h6>Hyperlink Network Systems</h6>
+            <div class="skill px-14 py-4">
+              <h5>IT Support Specialist(09/2021 - 08/2023)</h5>
+              <h6> Hyperlink Network Systems  </h6>
               <p>
                 Delivered expert technical support to businesses,
-                ensuring seamless operations and swift resolution of any IT issues.
+                 ensuring seamless operations and swift resolution of any IT issues.
               </p>
             </div>
+     
+           
+
           </div>
-        
-          <!-- RIGHT COLUMN -->
-          <div class="row">
-            <h2 class="font-bold text-2xl sm:text-3xl p-6">EDUCATION</h2>
-            <div class="icons relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden flex items-center justify-center">
-              <img class="flex-row" src="assets/icons/educationIcon.png" alt="Education Icon" />
-              <img class="flex-row" src="assets/icons/linei.png" alt="Line Icon" />
+
+          <!-- RIGHT COLUMN  -->
+          <div class="row pt-14 pr-24">
+            <h2 class="font-bold  text-3xl p-6">EDUCATION</h2>
+            <div
+              class="icons relative w-14 h-14 rounded-full overflow-hidden flex items-center justify-center"
+            >
+              <img
+                class="flex-row"
+                src="assets/icons/educationIcon.png"
+                alt=""
+              />
+             
+            
+
             </div>
-        
-            <div class="skill px-6 py-4 sm:px-14 sm:py-6">
+
+            <div class="skill px-14 py-4">
               <h5>Bachelor of Technology in Computer Science (graduated in 09/2022)</h5>
               <h6>Accra Technical University</h6>
+              
             </div>
-            <div class="icons relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden flex items-center justify-center">
-              <img class="flex-row" src="assets/icons/educationIcon.png" alt="Education Icon" />
-            </div>
-            <div class="skill px-6 py-4 sm:px-14 sm:py-6">
-              <h5>Higher National Diploma in Computer Science (graduated in 12/2020)</h5>
-              <h6>Accra Technical University</h6>
-            </div>
+            <div
+              class="icons relative w-14 h-14 rounded-full overflow-hidden flex items-center justify-center"
+            >
+            <div
+            class="icons relative w-14 h-14 rounded-full overflow-hidden flex items-center justify-center"
+          >
+            <img
+              class="flex-row"
+              src="assets/icons/educationIcon.png"
+              alt=""
+            />
           </div>
-        </div>
-        
-        <!-- Download CV Button -->
-        <div class="flex gap-4 mt-6 justify-center lg:justify-start mt-8">
-          <button class="button relative h-12 w-40 sm:w-48 overflow-hidden border bg-white shadow-xl">
-            <span class="relative z-10">VIEW CV </span>
-          </button>
-        </div>
-        
-        
-        <!-- Contact Section -->
-        <section id="contact" class="flex flex-col m-24 mx-48 justify-between md:flex-row items-center text-white space-y-6 md:space-y-0 md:space-x-8">
-          <div class="container">
-            <div class="content">
-              <div class="left-side">
-                <div class="address details">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <div class="topic">Address</div>
-                  <div class="text-one">New Achimota</div>
-                  <div class="text-two">Asene St</div>
-                  <div class="text-two">Accra</div>
-                </div>
-                <div class="phone details">
-                  <i class="fas fa-phone-alt"></i>
-                  <div class="topic">Phone</div>
-                  <div class="text-one">+233 554 825 221</div>
-                  <div class="text-two">+233 204 551 326</div>
-                </div>
-                <div class="email details">
-                  <i class="fas fa-envelope"></i>
-                  <div class="topic">Email</div>
-                  <div class="text-one">elizabethbarden18@gmail.com</div>
-                </div>
-              </div>
-              <div class="right-side">
-                <div class="topic-text">Send me a message</div>
-                <p>
-                  If you have any projects, collaborations, or inquiries about my
-                  work, feel free to reach out. I’m always excited to connect and
-                  explore new opportunities.
-                </p>
-                <form action="#">
-                  <div class="input-box">
-                    <input type="text" placeholder="Enter your name" />
-                  </div>
-                  <div class="input-box">
-                    <input type="text" placeholder="Enter your email" />
-                  </div>
-                  <div class="input-box message-box"></div>
-                  <div class="button">
-                    <input type="button" value="Send Now" />
-                  </div>
-        
-                </form>
+            </div>
+              <div class="skill px-14 py-4">
+                <h5>Higher National Diploma in Computer Science (graduated in 12/2020)</h5>
+                <h6>Accra Technical University</h6>
+                
               </div>
             </div>
+           
+
           </div>
-        </section>
+        </div>
+
+        <div class="flex justify-center gap-4 mt-6">
+          <!-- Shared link to download CV -->
+          <a
+            href="https://docs.google.com/document/d/1bQXNZgsxr3Y-Gb39deJZ1HS4pIMXS36j/edit?usp=sharing&ouid=117874706650817948176&rtpof=true&sd=true"
+            class="button relative flex items-center justify-center h-12 w-40 overflow-hidden border bg-white text-black font-semibold shadow-2xl transition-transform duration-300 ease-in-out hover:scale-105"
+          >
+            <span class="relative z-10">VIEW CV</span>
+          </a>
+        </div>
         
+      </div>
+      </section>
+
+   <!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <div class="content">
+      <div class="left-side">
+        <div class="details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-one">New Achimota</div>
+          <div class="text-two">Asene St</div>
+          <div class="text-two">Accra</div>
+        </div>
+        <div class="details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">+233 554 825 221</div>
+          <div class="text-two">+233 204 551 326</div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">elizabethbarden18@gmail.com</div>
+        </div>
+        <div class="topic-text">Send me a message</div>
+        <p>
+          If you have any projects, collaborations, or inquiries about my work,
+          feel free to reach out. I’m always excited to connect and explore new opportunities.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+    </main>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="home.js"></script>
+
+    </body>

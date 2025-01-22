@@ -1,132 +1,135 @@
-
-.container{
+/* General Styles */
+.container {
   width: 85%;
-  /* background: #fff; */
   border-radius: 6px;
-  padding: 20px 60px 30px 40px;
-  box-shadow: 0 5px 10px rgba(242, 203, 59, 0.2);
+  padding: 20px 40px;
+  box-shadow: 0 10px 10px rgba(242, 203, 59, 0.2);
+  margin: 0 auto;
+  background: #1f2937;
 }
-.container .content{
+
+.content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
-.container .content .left-side{
-  width: 25%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 15px;
-  position: relative;
+
+.left-side,
+.right-side {
+  flex: 1 1 48%;
+  max-width: 48%;
+  margin: 10px;
 }
-.content .left-side::before{
-  content: '';
-  position: absolute;
-  height: 70%;
-  width: 2px;
-  right: -15px;
-  top: 50%;
-  transform: translateY(-50%);
-  /* background: #afafb6; */
-}
-.content .left-side .details{
-  margin: 14px;
+
+.details {
+  margin: 20px 0;
   text-align: center;
 }
-.content .left-side .details i{
-  font-size: 30px;
+
+.details i {
+  font-size: 24px;
   color: #FDBA74;
   margin-bottom: 10px;
 }
-.content .left-side .details .topic{
+
+.topic {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: bold;
+  color: #FDBA74;
 }
-.content .left-side .details .text-one,
-.content .left-side .details .text-two{
+
+.text-one,
+.text-two {
   font-size: 14px;
-  color:white;
-}
-.container .content .right-side{
-  width: 75%;
-  margin-left: 75px;
-}
-.content .right-side .topic-text{
-  font-size: 23px;
-  font-weight: 600;
-  /* color: #3e2093; */
-}
-.right-side .input-box{
-  height: 50px;
-  width: 100%;
-  margin: 12px 0;
-}
-.right-side .input-box input,
-.right-side .input-box textarea{
-  height: 100%;
-  width: 100%;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  background: #111827;
-  border-radius: 6px;
-  padding: 0 15px;
-  resize: none;
-}
-.right-side .message-box{
-  min-height: 110px;
-}
-.right-side .input-box textarea{
-  padding-top: 6px;
-}
-.right-side .button{
-  display: inline-block;
-  margin-top: 12px;
-}
-.right-side .button input[type="button"]{
-  font-size: 18px;
-  outline: none;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  background: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  color: white;
 }
 
+.topic-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #FDBA74;
+}
 
+p {
+  color: white;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left; /* Default alignment for larger screens */
+}
+
+/* Responsive Styles */
 @media (max-width: 950px) {
-  .container{
+  .container {
     width: 90%;
-    padding: 30px 40px 40px 35px ;
+    padding: 20px 30px;
   }
-  .container .content .right-side{
-   width: 75%;
-   margin-left: 55px;
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .right-side .topic-text {
+    text-align: center; /* Center "Send me a message" on mobile */
+  }
+
+  .right-side p {
+    text-align: center; /* Center paragraph under "Send me a message" on mobile */
+  }
 }
-}
+
 @media (max-width: 820px) {
-  .container{
-    margin: 40px 0;
-    height: 100%;
+  .container {
+    margin: 20px 0;
+    padding: 15px 20px;
   }
-  .container .content{
-    flex-direction: column-reverse;
+
+  .content {
+    gap: 20px;
   }
- .container .content .left-side{
-   width: 100%;
-   flex-direction: row;
-   margin-top: 40px;
-   justify-content: center;
-   flex-wrap: wrap;
- }
- .container .content .left-side::before{
-   display: none;
- }
- .container .content .right-side{
-   width: 100%;
-   margin-left: 0;
- }
+
+  .details {
+    margin: 10px 0;
+  }
+
+  .right-side .topic-text {
+    text-align: center; /* Keep it centered for smaller screens */
+  }
+
+  .right-side p {
+    text-align: center; /* Center paragraph for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px 15px;
+  }
+
+  .details i {
+    font-size: 20px;
+  }
+
+  .topic,
+  .text-one,
+  .text-two {
+    font-size: 12px;
+  }
+
+  .right-side .topic-text {
+    text-align: center; /* Ensure it stays centered */
+    margin-bottom: 15px; /* Adjust spacing */
+  }
+
+  .right-side p {
+    text-align: center; /* Ensure paragraph is centered */
+  }
 }
